@@ -24,3 +24,30 @@ If you discover a security vulnerability within Lumen, please send an e-mail to 
 ## License
 
 The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+## How To Install on your local machine
+
+> Clone this repositories on your local device
+
+```bash 
+    composer install
+```
+
+> Copy .env.example to .env
+> Replace this value with your local database
+
+```javascript
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=kamus_musik
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+> Run serve with 
+```bash 
+php -S localhost:{{PORT}} -t public
+```
+
+> DONE!!
