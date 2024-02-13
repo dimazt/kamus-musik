@@ -19,6 +19,20 @@ class MusicController extends Controller
 
     //
 
+    public function index()
+    {
+        $music = DB::connection('mysql')->table("music_source")->get();
+        return response()->json(['status' => 'success', 'data' => $music]);
+    }
+    public function show($id)
+    {
+        $music = DB::connection('mysql')->table("music_source")->where('id')->first();
+        if(!$music){
+            return response()->json(['status'=> 'failed','message'=> 'Data tidak ditemukan!']);
+        }
+        return response()->json(['status' => 'success', 'data' => $music]);
+    }
+
     public function search(Request $request)
     {
         $searchInput = $request->input("search");
