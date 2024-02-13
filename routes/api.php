@@ -14,3 +14,5 @@
 */
 
 $router->get('/music', 'MusicController@search');
+$router->get('/music-list', 'MusicController@index');
+$router->get('/music/show/{id}', 'MusicController@show');
